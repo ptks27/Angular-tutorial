@@ -1,10 +1,6 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { BehaviorSubject, NEVER, switchMap } from 'rxjs';
+import { useDragImage } from '../shared/use-drag-image';
 
 @Component({
   selector: 'app-viewchild',
@@ -13,18 +9,32 @@ import {
   templateUrl: './viewchild.component.html',
   styleUrl: './viewchild.component.scss',
 })
-export class ViewchildComponent implements OnInit, AfterViewInit {
+export class ViewchildComponent implements OnInit {
   @ViewChild('GalaxyImage', { read: ElementRef })
-  imageRef?: ElementRef<HTMLImageElement>;
+  set imageRef(el: ElementRef<HTMLImageElement> | undefined) {
+    this.imageRef$.next(el);
+  }
+
+  get imageRef() {
+    return this.imageRef$.value;
+  }
+
+  imageRef$ = new BehaviorSubject<ElementRef<HTMLImageElement> | undefined>(
+    undefined
+  );
+
   isShowImage = false;
   constructor() {}
 
   ngOnInit(): void {
-    console.log('onInit : ', this.imageRef);
-  }
-
-  ngAfterViewInit(): void {
-    console.log('afterview : ', this.imageRef);
+    this.imageRef$.pipe(
+      switchMap((ref) => {
+        if (ref) {
+          return useDragImage(ref.nativeElement);
+        }
+        return NEVER;
+      })
+    );
   }
 
   small() {
