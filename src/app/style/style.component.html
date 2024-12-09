@@ -1,0 +1,23 @@
+<div class="layout-config" [class.layout-config-active]="active">
+  <div class="layout-config-content-wrapper">
+    <a tabindex="0" (click)="active = !active" class="layout-config-button"
+      ><i class="pi pi-cog"></i
+    ></a>
+    <a tabindex="0" class="layout-config-close"><i class="pi pi-times"></i></a>
+    <div class="layout-config-content">
+      <div>
+        <img
+          src="https://images.pexels.com/photos/25365219/pexels-photo-25365219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="cafe-book"
+        />
+        <h1 class="font-bold text-2xl my-2 text-green-600">Hello Cafe</h1>
+        <input
+          type="text"
+          placeholder="Type here"
+          class="input input-bordered input-success w-full max-w-xs mr-1"
+        />
+        <button class="btn">Cheer</button>
+      </div>
+    </div>
+  </div>
+</div>

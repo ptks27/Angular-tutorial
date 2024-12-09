@@ -1,0 +1,97 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center my-5">
+  <h1 class="text-2xl font-bold text-blue-400">การใช้งาน Reactive Forms</h1>
+</div>
+<div class="flex justify-center items-center my-5">
+  <div class="flex flex-col justify-center">
+    <input
+      type="text"
+      [formControl]="weightForm"
+      pInputText
+      class="w-full"
+      placeholder="weight kg"
+    />
+    <span
+      *ngIf="weightForm.invalid && weightForm.touched"
+      class="text-red-500 mt-2"
+      >กรุณากรอกน้ำหนัก</span
+    >
+  </div>
+</div>
+<div class="flex justify-center items-center my-5">
+  <div class="flex flex-col justify-center">
+    <input
+      type="text"
+      [formControl]="heightForm"
+      pInputText
+      class="w-full"
+      placeholder="height m"
+    />
+    <span
+      *ngIf="heightForm.invalid && heightForm.touched"
+      class="text-red-500 mt-2"
+      >กรุณากรอกส่วนสูง</span
+    >
+  </div>
+</div>
+<div class="flex flex-col justify-center items-center">
+  <button class="btn btn-success text-white" (click)="calculate()">
+    Calculate BMI
+  </button>
+</div>
+<div class="flex flex-col justify-center mt-2">
+  <div class="flex justify-center text-center">
+    <h1>BMI : {{ bmi }}</h1>
+  </div>
+</div>
+<div class="flex flex-col justify-center mt-2">
+  <div class="flex justify-center text-center">
+    <h1>INFO : {{ info }}</h1>
+  </div>
+</div>
+<div class="flex justify-center mt-4">
+  <hr class="flex justify-center items-center w-80 h-1 bg-yellow-400 mt-3" />
+</div>
+<div class="flex justify-center my-5">
+  <h1 class="text-2xl font-bold text-blue-400">
+    การใช้งาน Reactive Forms Email
+  </h1>
+</div>
+<div class="flex justify-center my-5">
+  <h3 class="text-sm font-bold text-red-300">
+    วิธี Validate ใน formControl หลายตัว
+  </h3>
+</div>
+<div class="flex justify-center items-center my-5">
+  <div class="flex flex-col justify-center">
+    <input
+      type="text"
+      [formControl]="emailForm"
+      pInputText
+      class="w-full"
+      placeholder="email"
+    />
+    <small
+      *ngIf="
+        emailForm.hasError('required') && emailForm.invalid && emailForm.touched
+      "
+      class="text-red-500 mt-2"
+      >Email is not available.</small
+    >
+    <small
+      *ngIf="
+        emailForm.hasError('email') && emailForm.invalid && emailForm.touched
+      "
+      class="text-red-500 mt-2"
+      >WTF email syntax.</small
+    >
+  </div>
+</div>
+<div class="flex flex-col justify-center items-center">
+  <button [disabled]="emailForm.invalid" class="btn btn-success text-white">
+    Submit
+  </button>
+</div>
+<div class="flex justify-center text-center my-3">
+  {{ emailForm.errors | json }}
+</div>

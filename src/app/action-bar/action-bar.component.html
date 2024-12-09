@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center mt-3">
+  <h1 class="text-2xl font-bold text-blue-700">Action-bar</h1>
+</div>
+<app-action></app-action>
+<app-action></app-action>
+
+<hr class="h-1 w-full bg-gray-300" />
+
+<div class="flex justify-center text-center mt-3">
+  <h1 class="text-2xl font-bold text-green-700">Action-bar InputStep</h1>
+</div>
+
+<app-action (counterChange)="testsNumberChange($event)" [step]="5"></app-action>
+<app-action (counterChange)="testsNumberChange($event)" [step]="10"></app-action>
+<div class="flex justify-center text-center">
+  <button (click)="testClick()" class="btn">testEventBinding</button>
+</div>

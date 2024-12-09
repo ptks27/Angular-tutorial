@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center mt-3 font-bold text-2xl">
+  การใช้งาน GET และ SET
+</div>
+<div class="flex justify-center items-center mt-5">
+  <button class="btn bg-green-400" (click)="addPrice(10)">Add 10</button>
+  <button class="btn bg-green-400" (click)="addPrice(50)">Add 50</button>
+</div>
+<div class="flex justify-center items-center my-3 text-xl text-red-400">
+  value :
+  <h1 class="font-bold text-blue-800 ml-3">{{ summaryPrice }}</h1>
+</div>

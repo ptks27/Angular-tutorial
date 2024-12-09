@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center font-bold my-10">Help Text</div>
+<div class="flex justify-center text-center mt-10">
+  <div class="flex flex-column gap-2">
+    <label for="username">Username</label>
+    <input
+      pInputText
+      id="username"
+      aria-describedby="username-help"
+      [(ngModel)]="value"
+    />
+    <small id="username-help">
+      Enter your username to reset your password.
+    </small>
+  </div>
+</div>
+<hr class="my-3" />
+<div class="flex justify-center text-center">
+  <h1 class="font-bold text-2xl text-red-300">Table</h1>
+</div>
+<div class="my-3 flex justify-center items-center w-full">
+  <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>T-shirt</th>
+        <th>Shoes</th>
+        <th>Pants</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.shirt }}</td>
+        <td>{{ product.shoes }}</td>
+        <td>{{ product.pants }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div
+  class="flex justify-center text-center font-bold text-2xl text-teal-400 my-2"
+>
+  <h1>การใช้งาน Directive</h1>
+</div>
+<div class="flex justify-center">
+  <input
+    (appHttpBook)="bookList = $event"
+    type="text"
+    placeholder=""
+    class="input input-bordered w-full max-w-xs"
+  />
+</div>
+<div class="flex justify-center my-2">{{ bookList | json }}</div>

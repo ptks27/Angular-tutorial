@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center">
+  <h1 class="text-2xl font-bold text-yellow-500">Array</h1>
+</div>
+<div class="flex justify-center items-center">
+  <div
+    class="flex justify-center text-center my-5 border-2 border-gray-400 w-56"
+  >
+    {{ customerList[0] }} <br />
+    {{ customerList[1] }}
+  </div>
+</div>
+
+<hr class="h-1 bg-orange-300" />
+
+<div class="flex justify-center text-center">
+  <h1 class="my-3 text-2xl font-bold text-orange-600">Array ngFor</h1>
+</div>
+<div class="flex justify-center text-center">
+  <div
+    class="flex justify-center text-center my-5 border-2 border-gray-400 w-56"
+  >
+    <ul>
+      <li *ngFor="let customer of customerList; let i = index">
+        {{ customer }}
+        <button
+          class="btn btn-sm my-2 bg-red-500 text-white"
+          (click)="removeCustomer(i)"
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="flex justify-center items-center my-2">
+  <button class="btn btn-primary mr-2" (click)="pushCustomer()">push</button>
+  <button class="btn btn-accent" (click)="unShiftCustomer()">unShift</button>
+</div>
+
+<hr class="h-1 bg-orange-300" />
+<div class="flex justify-center text-center">
+  <h1 class="font-bold text-2xl my-2 text-green-400">การใช้ method</h1>
+</div>
+<div class="flex justify-center text-center">
+  <p>.unshift() จะเพิ่มข้อมูลด้านหน้า</p>
+</div>
+<div class="flex justify-center text-center">
+  <p>.Splice() จะเพิ่มข้อมูลระหว่างกลาง (สามารถเพิ่มและลบข้อมูลได้)</p>
+</div>
+<div class="flex justify-center text-center">
+  <p>.push() จะเพิ่มข้อมูลไว้ท้ายสุด</p>
+</div>

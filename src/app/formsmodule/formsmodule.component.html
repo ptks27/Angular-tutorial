@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center">
+  <h1 class="text-2xl font-bold text-blue-700 my-2">Forms Module</h1>
+</div>
+
+<div class="flex flex-col items-center justify-center my-3">
+  <input
+    [(ngModel)]="employeeCode"
+    required
+    pInputText
+    #employeeCodeNgModel="ngModel"
+    type="text"
+    placeholder="รหัส"
+    class="input input-bordered w-full max-w-xs"
+  />
+
+  <div class="text-red-500" *ngIf="employeeCodeNgModel.invalid">
+    กรุณากรอกข้อมูล
+  </div>
+</div>
+<div class="flex items-center justify-center">
+  <input
+    [(ngModel)]="employeeName"
+    type="text"
+    placeholder="ชื่อ"
+    class="input input-bordered w-full max-w-xs"
+  />
+</div>
+<div class="flex items-center justify-center mt-2">
+  <button
+    [disabled]="employeeCodeNgModel.invalid"
+    class="btn btn-info text-white"
+  >
+    บันทึก
+  </button>
+</div>

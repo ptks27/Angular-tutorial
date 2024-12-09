@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div *ngIf="activate; else elseTemplate">
+  <app-action></app-action>
+</div>
+
+<div class="flex justify-center text-center">
+  <ng-template #elseTemplate>
+    <h1 class="flex justify-center text-center my-5">Activate Now</h1>
+  </ng-template>
+</div>
+<div class="flex justify-center text-center my-5">
+  <button class="btn" (click)="activate = true">activate</button>
+</div>
+<hr class="h-2 bg-blue-300" />
+<div class="flex justify-center text-center">
+  <h1 class="font-bold my-3 text-red-500">*ngIf แบบ else template</h1>
+</div>
+<div class="my-3">
+  <app-action-bar-view [inputDisplay]="false"></app-action-bar-view>
+  <app-action-bar-view [inputDisplay]="true"></app-action-bar-view>
+</div>

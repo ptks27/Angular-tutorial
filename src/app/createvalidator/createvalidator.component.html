@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center my-3">
+  <h1 class="text-2xl font-bold text-green-400">การสร้าง Validator ใช้เอง</h1>
+</div>
+<div class="flex justify-center text-center">
+  <h1 class="font-bold text-blue-500">ID Card :</h1>
+</div>
+<div class="flex justify-center">
+  <div class="flex flex-col justify-center border-2 w-80 h-40 border-blue-600">
+    <div class="flex justify-center mt-2">
+      <input
+        type="text"
+        placeholder="กรอกรหัสบัตรประชาชน"
+        pInputText
+        [formControl]="idCard"
+        class="text-sm input input-bordered input-info"
+      />
+    </div>
+    <div class="flex justify-center mt-2">
+      <span
+        class="text-sm text-red-500"
+        *ngIf="idCard.invalid && idCard.errors?.['required'] && idCard.touched"
+      >
+        This field is required
+      </span>
+      <span
+        class="text-sm text-red-500"
+        *ngIf="idCard.invalid && idCard.errors?.['minlength'] && idCard.touched"
+      >
+        at least 5 characters
+      </span>
+      <span
+        class="text-sm text-red-500"
+        *ngIf="idCard.invalid && idCard.errors?.['idCard'] && idCard.touched"
+      >
+        invalid identity card
+      </span>
+    </div>
+    <div class="flex justify-center text-center my-2">
+      {{ idCard.errors | json }}
+    </div>
+  </div>
+</div>

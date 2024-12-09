@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="my-3">
+  Hello World Angular This is my <span class="font-bold">{{ title }}</span>
+</div>
+
+My village ninja's name is
+<span class="font-bold text-xl text-red-400">{{ ninjaName }}</span>
+<button class="btn btn-sm ml-2" (click)="ninjaConsole()">Console ninja</button>
+<div class="my-2">
+  <button class="btn btn-sm" (click)="changNinjaName('sakura')">
+    Chang Ninja Name to <span class="text-pink-400">Sakura</span>
+  </button>
+  <button class="btn btn-sm" (click)="changNinjaName('sasuke')">
+    Chang Ninja Name to <span class="text-green-700">Sasuke</span>
+  </button>
+  <button class="btn btn-sm" (click)="changNinjaName('naruto')">
+    Chang Ninja Name to <span class="text-orange-500">Naruto</span>
+  </button>
+</div>

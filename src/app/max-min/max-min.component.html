@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center text-center mt-5">
+  <h1 class="font-bold text-red-500">{{ minLabel }}</h1>
+</div>
+<app-action-bar-max-min
+  (numberChange)="doMinChange($event)"
+  class="text-red-400"
+></app-action-bar-max-min>
+
+<div class="flex justify-center text-center">
+  <h1 class="font-bold text-blue-500">{{ maxLabel }}</h1>
+</div>
+<app-action-bar-max-min
+  (numberChange)="doMaxChange($event)"
+  class="text-blue-400"
+></app-action-bar-max-min>

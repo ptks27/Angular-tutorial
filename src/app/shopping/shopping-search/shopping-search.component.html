@@ -1,0 +1,15 @@
+<div class="flex justify-center my-5">
+  <h1 class="font-bold text-2xl text-pink-600">Search</h1>
+</div>
+<div class="flex items-center justify-center">
+  <p-iconField iconPosition="right">
+    <p-inputIcon styleClass="pi pi-search" />
+    <input
+      type="text"
+      #inputEl
+      (input)="inputSearch(inputEl.value)"
+      pInputText
+      placeholder="Search"
+    />
+  </p-iconField>
+</div>

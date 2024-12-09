@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center items-center">
+  <h1 class="mt-5 font-bold text-red-600">บุฟเฟ่ มา 4 จ่าย 3</h1>
+  <br />
+</div>
+<div class="flex justify-center items-center">
+  <input
+    #priceBufferInput
+    type="text"
+    placeholder="กรอกราคาบุฟเฟ่"
+    value=""
+    class="input input-bordered w-full max-w-xs mt-2"
+  />
+  <button
+    (click)="calBuffet(priceBufferInput.value)"
+    class="btn ml-1 bg-orange-300"
+  >
+    คำนวณ
+  </button>
+</div>
+<div class="flex justify-center items-center mt-3 text-gray-500">
+  <p>
+    คนละ <span class="font-bold text-orange-400">{{ value }}</span> บาท
+  </p>
+</div>
+<div class="flex justify-center my-5">
+  <div class="carousel rounded-box w-96">
+    <div class="carousel-item w-1/2">
+      <img
+        src="https://img-service-v3.hungryhub.com/pr:sharp/rs:fill:0:0:0/g:ce/aHR0cHM6Ly9pbWFnZXMuaHVuZ3J5aHViLmNvbS91cGxvYWRzL3Jlc3RhdXJhbnRzLzE0MzMvcGhvdG9zLzExNzc5NS9SYWNrTXVsdGlwYXJ0MjAyNDAxMjItNDQ4MS0xaGprdmM4LmpwZw==.webp"
+        class="w-full"
+      />
+    </div>
+    <div class="carousel-item w-1/2">
+      <img
+        src="https://img-service-v3.hungryhub.com/pr:sharp/rs:fill:0:0:0/g:ce/aHR0cHM6Ly9pbWFnZXMuaHVuZ3J5aHViLmNvbS91cGxvYWRzL3Jlc3RhdXJhbnRzLzE0MzMvcGhvdG9zLzExNzc5Ny9SYWNrTXVsdGlwYXJ0MjAyNDAxMjItNDQ4MS0xZmh5MmVmLkpQRw==.webp"
+        class="w-full"
+      />
+    </div>
+  </div>
+</div>

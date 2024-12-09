@@ -1,0 +1,16 @@
+<app-shopping-search (onSeach)="searchProduct($event)"></app-shopping-search>
+<div class="flex justify-center text-center my-3">
+  <div class="flex flex-wrap gap-20 justify-center text-center">
+    <div class="" *ngFor="let product of filteredProducts">
+      <p-card class="flex" header="" subheader="" [style]="{ width: '360px' }">
+        <p>
+          {{ product.name }}
+        </p>
+
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1"></div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+</div>
