@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BookService } from './shared/book.service';
 
 @Component({
@@ -7,10 +7,14 @@ import { BookService } from './shared/book.service';
   standalone: false,
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'my-new-project';
 
   constructor(private service: BookService) {
     this.service.httpBook().subscribe((val) => console.log(val));
   }
+
+
+
+  ngOnInit(): void {}
 }

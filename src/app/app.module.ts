@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FloatLabelModule } from 'primeng/floatlabel';
@@ -20,8 +21,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArrayComponent } from './array/array.component';
 import { BuffetComponent } from './buffet/buffet.component';
+import { CreatevalidatorComponent } from './createvalidator/createvalidator.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { EditTitleComponent } from './edit-title/edit-title.component';
+import { FormsmoduleComponent } from './formsmodule/formsmodule.component';
 import { GetsetComponent } from './getset/getset.component';
 import { HomeComponent } from './home/home.component';
 import { HttpBookDirective } from './http-book.directive';
@@ -29,19 +32,17 @@ import { MaxMinMeterComponent } from './max-min-meter/max-min-meter.component';
 import { MaxMinComponent } from './max-min/max-min.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OutputshoppingComponent } from './outputshopping/outputshopping.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { PipeModule } from './pipe/pipe.module';
 import { PrimengComponent } from './primeng/primeng.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 import { ShoppingModule } from './shopping/shopping.module';
 import { SqaureFlexMainComponent } from './sqaure-flex-main/sqaure-flex-main.component';
 import { SqaureFlexComponent } from './sqaure-flex/sqaure-flex.component';
+import { StyleComponent } from './style/style.component';
 import { TestRequestModule } from './test-request/test-request.module';
 import { TwowayComponent } from './twoway/twoway.component';
 import { ViewComponent } from './view/view.component';
-import { FormsmoduleComponent } from './formsmodule/formsmodule.component';
-import { CreatevalidatorComponent } from './createvalidator/createvalidator.component';
-import { StyleComponent } from './style/style.component';
-import { PipeComponent } from './pipe/pipe.component';
-import { PipeModule } from './pipe/pipe.module';
 import { ViewchildComponent } from './viewchild/viewchild.component';
 
 @NgModule({
@@ -92,6 +93,7 @@ import { ViewchildComponent } from './viewchild/viewchild.component';
     MessagesModule,
     ReactiveFormsModule,
     PipeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
